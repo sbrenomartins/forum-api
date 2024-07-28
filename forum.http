@@ -9,12 +9,24 @@ Content-Type: application/json
 
 ###
 
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+    "email": "sbrenomartins@gmail.com",
+    "password": "1234567oito"
+}
+
+###
+
 GET http://localhost:3000/users/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
 
 ###
 
 PATCH http://localhost:3000/users/3
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
 
 {
     "name": "Breno Martins da Silva"
@@ -23,13 +35,75 @@ Content-Type: application/json
 ###
 
 DELETE http://localhost:3000/users/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
 
 ###
 
-POST http://localhost:3000/auth/signin
+POST http://localhost:3000/questions
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
 
 {
-    "email": "sbrenomartins@gmail.com",
-    "password": "1234567oito"
+    "title": "Minha primeira questão",
+    "body": "Minha primeira questão no fórum"
 }
+
+###
+
+GET http://localhost:3000/questions
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+
+###
+
+GET http://localhost:3000/questions/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+
+###
+
+PATCH http://localhost:3000/questions/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+
+{
+    "title": "Minha primeira questão no fórum"
+}
+
+###
+
+DELETE http://localhost:3000/questions/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+
+###
+
+POST http://localhost:3000/answers/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+
+{
+    "body": "Minha primeira resposta"
+}
+
+###
+
+GET http://localhost:3000/answers
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+
+###
+
+GET http://localhost:3000/answers/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+
+###
+
+PATCH http://localhost:3000/answers/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+
+{
+    "body": "Minha primeira resposta no fórum"
+}
+
+###
+
+DELETE http://localhost:3000/answers/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
