@@ -14,16 +14,8 @@ export class UserService {
     return this.prismaService.user.findUnique({
       where: userWhereUniqueInput,
       include: {
-        answers: {
-          where: {
-            userId: userWhereUniqueInput.id,
-          },
-        },
-        questions: {
-          where: {
-            userId: userWhereUniqueInput.id,
-          },
-        },
+        answers: true,
+        questions: true,
       },
     });
   }

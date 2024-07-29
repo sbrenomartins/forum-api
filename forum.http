@@ -2,8 +2,8 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "name": "Breno M. Silva",
-    "email": "sbrenomartins@gmail.com",
+    "name": "Teste",
+    "email": "teste@gmail.com",
     "password": "1234567oito"
 }
 
@@ -13,20 +13,20 @@ POST http://localhost:3000/auth/signin
 Content-Type: application/json
 
 {
-    "email": "sbrenomartins@gmail.com",
+    "email": "teste@gmail.com",
     "password": "1234567oito"
 }
 
 ###
 
-GET http://localhost:3000/users/3
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+GET http://localhost:3000/users/1
+Authorization: Bearer seu_token
 
 ###
 
-PATCH http://localhost:3000/users/3
+PATCH http://localhost:3000/users/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+Authorization: Bearer seu_token
 
 {
     "name": "Breno Martins da Silva"
@@ -34,14 +34,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6M
 
 ###
 
-DELETE http://localhost:3000/users/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+DELETE http://localhost:3000/users/1
+Authorization: Bearer seu_token
 
 ###
 
 POST http://localhost:3000/questions
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+Authorization: Bearer seu_token
 
 {
     "title": "Minha primeira questão",
@@ -51,18 +51,18 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6M
 ###
 
 GET http://localhost:3000/questions
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+Authorization: Bearer seu_token
 
 ###
 
 GET http://localhost:3000/questions/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+Authorization: Bearer seu_token
 
 ###
 
 PATCH http://localhost:3000/questions/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+Authorization: Bearer seu_token
 
 {
     "title": "Minha primeira questão no fórum"
@@ -71,13 +71,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6M
 ###
 
 DELETE http://localhost:3000/questions/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+Authorization: Bearer seu_token
 
 ###
 
 POST http://localhost:3000/answers/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+Authorization: Bearer seu_token
 
 {
     "body": "Minha primeira resposta"
@@ -86,18 +86,18 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6M
 ###
 
 GET http://localhost:3000/answers
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+Authorization: Bearer seu_token
 
 ###
 
 GET http://localhost:3000/answers/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+Authorization: Bearer seu_token
 
 ###
 
 PATCH http://localhost:3000/answers/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+Authorization: Bearer seu_token
 
 {
     "body": "Minha primeira resposta no fórum"
@@ -106,4 +106,4 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6M
 ###
 
 DELETE http://localhost:3000/answers/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjE4OTQyNCwiZXhwIjoxNzIyMjc1ODI0fQ.Us8pKxhQG-IehK8Ov2NHIqCdxZ_IVb2YpHhTPHofhV4
+Authorization: Bearer seu_token

@@ -5,13 +5,17 @@ import {
   Delete,
   Get,
   Param,
+  ParseIntPipe,
   Patch,
   Post,
   UseGuards,
+  ValidationPipe,
 } from '@nestjs/common';
-import { Prisma, User as UserModel } from '@prisma/client';
+import { User as UserModel } from '@prisma/client';
 import { UserService } from './user.service';
 import { AuthGuard } from 'src/auth/auth.guard';
+import { UpdateUserDto } from './dto/updateUser.dto';
+import { CreateUserDto } from './dto/createUser.dto';
 
 @Controller('users')
 export class UserController {
@@ -19,7 +23,7 @@ export class UserController {
 
   @Post()
   async signUpUser(
-    @Body() userData: Prisma.UserCreateInput,
+    @Body(new ValidationPipe()) userData: CreateUserDto,
   ): Promise<Omit<UserModel, 'password'>> {
     const user = await this.userService.createUser(userData);
 
@@ -30,9 +34,9 @@ export class UserController {
   @UseGuards(AuthGuard)
   @Get(':id')
   async getUserById(
-    @Param('id') id: string,
+    @Param('id', ParseIntPipe) id: number,
   ): Promise<Omit<UserModel, 'password'>> {
-    const user = await this.userService.getUser({ id: Number(id) });
+    const user = await this.userService.getUser({ id });
 
     const { password, ...result } = user;
     return result;
@@ -41,13 +45,13 @@ export class UserController {
   @UseGuards(AuthGuard)
   @Patch(':id')
   async updateUser(
-    @Param('id') id: string,
-    @Body() userData: Prisma.UserUpdateInput,
+    @Param('id', ParseIntPipe) id: number,
+    @Body(new ValidationPipe()) userData: UpdateUserDto,
   ): Promise<Omit<UserModel, 'password'>> {
     const user = await this.userService.updateUser({
       data: userData,
       where: {
-        id: Number(id),
+        id,
       },
     });
 
@@ -58,9 +62,9 @@ export class UserController {
   @UseGuards(AuthGuard)
   @Delete(':id')
   async deleteUser(
-    @Param('id') id: string,
+    @Param('id', ParseIntPipe) id: number,
   ): Promise<Omit<UserModel, 'password'>> {
-    const user = await this.userService.deleteUser({ id: Number(id) });
+    const user = await this.userService.deleteUser({ id });
 
     const { password, ...result } = user;
     return result;
